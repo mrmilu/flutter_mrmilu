@@ -9,12 +9,27 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  dio: 4.0.6
   flutter:
     sdk: flutter
+  intl: 0.17.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: 1.0.4
+  index_generator: 3.0.0
+  faker_dart: 0.1.4
 
 flutter:
+
+
+## Index generator configuration
+index_generator:
+  exclude:
+    - '**/helpers_io.dart'
+    - '**/helpers_web.dart'
+  indexes:
+    - path: lib
+      name: flutter_mrmilu
+      library: flutter_mrmilu
