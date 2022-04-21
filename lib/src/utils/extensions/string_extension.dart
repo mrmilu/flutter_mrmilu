@@ -6,25 +6,18 @@ extension StringExtension on String {
   /// Input: `this is a text. are you sure? yes`
   ///
   /// Output: `This is a text. are you sure? yes`
-  ///
-  /// References:
-  /// - https://stackoverflow.com/a/56085219/8700272
-  /// - https://stackoverflow.com/questions/25735644/python-regex-for-splitting-text-into-sentences-sentence-tokenizing
   String toSentenceCase() {
     if (isEmpty) {
       return this;
     }
-    final sentences =
-        split(RegExp(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s'));
+    const regExp =
+        r'[a-zA-Z\d][^.!¡?¿]*|[^a-zA-Z\d]*[.!¡?¿][^a-zA-Z\d]*|[^a-zA-Z\d]+';
 
-    return sentences.length == 1
-        ? sentences.first.toFirstLetterCase()
-        : sentences.reduce((value, element) {
-            final valueText =
-                value == sentences.first ? value.toFirstLetterCase() : value;
-            final elementText = element.toFirstLetterCase();
-            return valueText + ' ' + elementText;
-          });
+    return RegExp(regExp)
+        .allMatches(this)
+        .toList()
+        .map((m) => (m.group(0) ?? '').toFirstLetterCase())
+        .join();
   }
 
   /// Apply uppercase to first letter of each word
