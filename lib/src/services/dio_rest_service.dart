@@ -3,23 +3,40 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 
 /// Abstraction of dio library to Api REST implementations
-///
-/// Use [baseUrl] to config a base url of api, like `https://api.mrmilu.com`
-///
-/// Use optional [interceptors] to configure a interceptors list
-///
-/// Use optional [catchErrors] to get DioError. This is usuful when need
-/// transform a DioError to custom error.
 class DioRestService {
+  /// Use [baseUrl] to config a base url of api, like `https://api.mrmilu.com`
   final String baseUrl;
+
+  /// Use optional [interceptors] to configure a interceptors list
   final List<Interceptor> interceptors;
+
+  /// Optional [catchErrors] to get DioError. This is usuful when need
+  /// transform a DioError to custom error.
   final void Function(DioError)? catchErrors;
+
+  /// Receive timeout in miliseconds
+  ///
+  /// By default [15] seconds
+  final int receiveTimeout;
+
+  /// Connect timeout in miliseconds
+  ///
+  /// By default [15] seconds
+  final int connectTimeout;
+
+  /// Send timeout in miliseconds
+  ///
+  /// By default [15] seconds
+  final int sendTimeout;
   late Dio _dio;
 
   DioRestService({
     required this.baseUrl,
     this.interceptors = const [],
     this.catchErrors,
+    this.receiveTimeout = 15000,
+    this.connectTimeout = 15000,
+    this.sendTimeout = 15000,
   }) {
     _initClient();
   }
