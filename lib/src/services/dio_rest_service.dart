@@ -59,13 +59,13 @@ class DioRestService {
 
   Future<T?> get<T>(
     String endpointPath, {
-    Map<String, dynamic>? query,
+    Map<String, dynamic>? queryParam,
   }) async {
     return await _tryCatch(
       () async {
         final response = await _dio.get<T>(
           endpointPath,
-          queryParameters: query,
+          queryParameters: queryParam,
         );
         return response.data;
       },
@@ -93,13 +93,15 @@ class DioRestService {
 
   Future<Map<String, dynamic>?> delete(
     String endpointPath, {
-    Map<String, dynamic>? query,
+    Map<String, dynamic>? data,
+    Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<Map<String, dynamic>>(
       () async {
         final response = await _dio.delete<Map<String, dynamic>?>(
           endpointPath,
-          data: query,
+          data: data,
+          queryParameters: queryParam,
         );
         return response.data ?? {};
       },
@@ -108,13 +110,15 @@ class DioRestService {
 
   Future<Map<String, dynamic>?> patch(
     String endpointPath, {
-    Map<String, dynamic>? query,
+    Map<String, dynamic>? data,
+    Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<Map<String, dynamic>>(
       () async {
         final response = await _dio.patch<Map<String, dynamic>?>(
           endpointPath,
-          data: query,
+          data: data,
+          queryParameters: queryParam,
         );
         return response.data ?? {};
       },
