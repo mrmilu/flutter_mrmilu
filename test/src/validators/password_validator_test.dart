@@ -54,7 +54,18 @@ void main() {
     () {
       test('will be true when has special characters', () {
         final password = faker.internet.domainName();
+        final password2 = faker.datatype.string() + '\\';
+        final password3 = faker.datatype.string() + '\$';
+        final password4 = faker.datatype.string() + ']';
+        final password5 = faker.datatype.string() + '+';
+        final password6 = faker.datatype.string() + '?';
+
         expect(PasswordValidators.hasSpecialCharacter(password), true);
+        expect(PasswordValidators.hasSpecialCharacter(password2), true);
+        expect(PasswordValidators.hasSpecialCharacter(password3), true);
+        expect(PasswordValidators.hasSpecialCharacter(password4), true);
+        expect(PasswordValidators.hasSpecialCharacter(password5), true);
+        expect(PasswordValidators.hasSpecialCharacter(password6), true);
       });
       test('will be false when not special characters', () {
         final password = faker.datatype.string();

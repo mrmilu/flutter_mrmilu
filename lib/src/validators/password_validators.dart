@@ -17,9 +17,10 @@ class PasswordValidators {
   /// Checks if [password] has a special character
   /// Special character list:
   ///
-  /// [#] [?] [!] [@] [$] [ ] [%] [^] [&] [*] [-] [:] []]
+  /// [&] [,] [:] [;] [=] [¿] [?] [@] [#] [|] [<] [>] [.]
+  /// [^] [*] [(] [)] [¡] [!] [-] [$] [%] [/] [\] []] [[]
   static bool hasSpecialCharacter(String password) {
-    return RegExp(r'[#?!@$ %^&*-/:]+').hasMatch(password);
+    return RegExp(r'[&,:;=¿?@#|<>.^*()%¡!\$%-/\\\]\[]+').hasMatch(password);
   }
 
   /// Checks if [password] has a minimal length
