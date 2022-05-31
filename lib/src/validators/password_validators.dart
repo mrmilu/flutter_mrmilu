@@ -17,15 +17,15 @@ class PasswordValidators {
   /// Checks if [password] has a special character
   /// Special character list:
   ///
-  /// [&] [,] [:] [;] [=] [¿] [?] [@] [#] [|] [<] [>] [.]
-  /// [^] [*] [(] [)] [¡] [!] [-] [$] [%] [/] [\] []] [[]
+  /// `&` `,` `:` `;` `=` `¿` `?` `@` `#` `|` `<` `>` `.`
+  /// `^` `*` `(` `)` `¡` `!` `-` `$` `%` `/` `\` `]` `[`
   static bool hasSpecialCharacter(String password) {
     return RegExp(r'[&,:;=¿?@#|<>.^*()%¡!\$%-/\\\]\[]+').hasMatch(password);
   }
 
   /// Checks if [password] has a minimal length
   ///
-  /// By default [minLength] is [8]
+  /// By default [minLength] is `8`
   static bool hasMinLength(String password, {int minLength = 8}) {
     return password.length >= minLength;
   }

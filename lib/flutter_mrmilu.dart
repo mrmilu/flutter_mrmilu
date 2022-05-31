@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+/// Mr Milú Flutter library
 library flutter_mrmilu;
 
 export 'src/helpers/helpers.dart';

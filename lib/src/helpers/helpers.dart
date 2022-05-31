@@ -9,7 +9,7 @@ class Helpers {
 
   /// Modify local debug url when run app in debug mode with Android emulator
   ///
-  /// By default isEmulator is [true]
+  /// By default isEmulator is `true`
   ///
   /// References: https://stackoverflow.com/questions/5806220/how-to-connect-to-my-http-localhost-web-server-from-android-emulator
   static String getLocalDebugUrl(String baseUrl, {bool isEmulator = true}) {

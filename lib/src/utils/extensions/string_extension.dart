@@ -36,7 +36,7 @@ extension StringExtension on String {
 
   /// Join list of [texts] to this string with separator
   ///
-  /// By default separator is [' '] (blank space)
+  /// By default separator is ` ` (blank space)
   String concatenate(List<String> texts, {String separator = ' '}) {
     if (texts.isEmpty || !texts.any((text) => text.isNotEmpty)) {
       return this;

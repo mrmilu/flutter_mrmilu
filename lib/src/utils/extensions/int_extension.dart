@@ -7,8 +7,8 @@ extension MoneyExtension on int {
   ///
   /// This method get locale from device to format number currency
   ///
-  /// By default [decimalDigits] is [0]
-  /// By default [currency] is [€]
+  /// By default [decimalDigits] is `0`
+  /// By default [currency] is `€`
   String toMoney({int decimalDigits = 0, String currency = '€'}) =>
       NumberFormat.simpleCurrency(
         locale: Helpers.getLocale(),

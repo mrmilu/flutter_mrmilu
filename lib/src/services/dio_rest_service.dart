@@ -16,17 +16,17 @@ class DioRestService {
 
   /// Receive timeout in miliseconds
   ///
-  /// By default [15] seconds
+  /// By default `15` seconds
   final int receiveTimeout;
 
   /// Connect timeout in miliseconds
   ///
-  /// By default [15] seconds
+  /// By default `15` seconds
   final int connectTimeout;
 
   /// Send timeout in miliseconds
   ///
-  /// By default [15] seconds
+  /// By default `15` seconds
   final int sendTimeout;
   late Dio _dio;
 

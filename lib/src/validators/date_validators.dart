@@ -3,7 +3,7 @@ import '../utils/extensions/date_time_extension.dart';
 class DateValidators {
   /// Checks if [age] is greather than [legalAdultAge]
   ///
-  /// By default [legalAdultAge] is [18]
+  /// By default [legalAdultAge] is `18`
   static bool isLegalAdult(DateTime age, {int legalAdultAge = 18}) {
     DateTime compareDate = DateTime(
       age.year + legalAdultAge,
