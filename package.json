@@ -7,6 +7,11 @@
   "scripts": {
     "release": "commit-and-tag-version"
   },
+  "commit-and-tag-version": {
+    "skip": {
+      "commit": true
+    }
+  },
   "devDependencies": {
     "commit-and-tag-version": "^10.0.1"
   }
