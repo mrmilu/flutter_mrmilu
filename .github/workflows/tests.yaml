@@ -1,19 +1,23 @@
 name: Test package
+
 on:
   push:     
+
 jobs: 
   test: 
     name: test
     runs-on: ubuntu-latest
+
     steps:
-    - name: configure enviroment
-    - uses: actions/checkout@v3
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - name: Download flutter
     - uses: subosito/flutter-action@v2.4.0
       with:
         flutter-version: '2.10.5'
-    - name: get flutter dependencies
+    - name: Install dependencies
       run: flutter pub get
-    - name: code analyze
+    - name: Analyze project source
       run: flutter analyze
-    - name: code test
+    - name: Run tests
       run: flutter test
