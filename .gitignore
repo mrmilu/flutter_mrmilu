@@ -9,6 +9,7 @@
 .history
 .svn/
 /node_modules
+.fvm/flutter_sdk
 
 # IntelliJ related
 *.iml
