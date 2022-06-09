@@ -1,11 +1,16 @@
 {
   "name": "flutter_mrmilu",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Mr.Milú",
   "license": "MIT",
   "private": true,
   "scripts": {
     "release": "commit-and-tag-version"
+  },
+  "commit-and-tag-version": {
+    "skip": {
+      "commit": true
+    }
   },
   "devDependencies": {
     "commit-and-tag-version": "^10.0.1"
