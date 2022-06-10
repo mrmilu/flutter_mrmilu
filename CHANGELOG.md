@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.1.1](https://github.com/mrmilu/flutter_mrmilu/compare/v0.1.0...v0.1.1) (2022-06-10)
+
+
+### Bug Fixes
+
+* **root:** Export http overrides ([15773ba](https://github.com/mrmilu/flutter_mrmilu/commit/15773ba6ccc944f27565bdbbb9d9d56c261fc9d6))
+
 ## 0.1.0 (2022-06-09)
 
 
