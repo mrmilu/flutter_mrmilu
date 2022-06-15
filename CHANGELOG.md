@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.1.1...0.2.0) (2022-06-15)
+
+
+### Features
+
+* Allow setup valid codes to dio rest service ([c0c541b](https://github.com/mrmilu/flutter_mrmilu/commit/c0c541ba571105655db0167cd02cf386baf337f7))
+
 ### [0.1.1](https://github.com/mrmilu/flutter_mrmilu/compare/0.1.0...0.1.1) (2022-06-10)
 
 
