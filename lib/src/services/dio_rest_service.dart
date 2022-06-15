@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:meta/meta.dart';
 
 /// Abstraction of dio library to Api REST implementations
 class DioRestService {
@@ -28,7 +29,15 @@ class DioRestService {
   ///
   /// By default `15` seconds
   final int sendTimeout;
-  late Dio _dio;
+
+  /// Valid codes to requests
+  /// If some code is outside this list, the request will be throw a DioError
+  ///
+  /// By default `[200]`
+  final List<int> validCodes;
+
+  @internal
+  late Dio dio;
 
   DioRestService({
     required this.baseUrl,
@@ -37,6 +46,7 @@ class DioRestService {
     this.receiveTimeout = 15000,
     this.connectTimeout = 15000,
     this.sendTimeout = 15000,
+    this.validCodes = const [200],
   }) {
     _initClient();
   }
@@ -45,16 +55,17 @@ class DioRestService {
     final Dio initDio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
-        receiveTimeout: 15000,
-        connectTimeout: 15000,
-        sendTimeout: 15000,
+        receiveTimeout: receiveTimeout,
+        connectTimeout: connectTimeout,
+        sendTimeout: sendTimeout,
+        validateStatus: (int? code) => validCodes.contains(code),
       ),
     );
 
     if (interceptors.isNotEmpty) {
       initDio.interceptors.addAll(interceptors);
     }
-    _dio = initDio;
+    dio = initDio;
   }
 
   Future<T?> get<T>(
@@ -63,7 +74,7 @@ class DioRestService {
   }) async {
     return await _tryCatch(
       () async {
-        final response = await _dio.get<T>(
+        final response = await dio.get<T>(
           endpointPath,
           queryParameters: queryParam,
         );
@@ -79,7 +90,7 @@ class DioRestService {
   }) async {
     return _tryCatch<Map<String, dynamic>>(
       () async {
-        final response = await _dio.post<dynamic>(
+        final response = await dio.post<dynamic>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
@@ -98,7 +109,7 @@ class DioRestService {
   }) async {
     return _tryCatch<Map<String, dynamic>>(
       () async {
-        final response = await _dio.delete<Map<String, dynamic>?>(
+        final response = await dio.delete<Map<String, dynamic>?>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
@@ -115,7 +126,7 @@ class DioRestService {
   }) async {
     return _tryCatch<Map<String, dynamic>>(
       () async {
-        final response = await _dio.patch<Map<String, dynamic>?>(
+        final response = await dio.patch<Map<String, dynamic>?>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
