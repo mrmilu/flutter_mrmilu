@@ -1,6 +1,6 @@
 name: flutter_mrmilu
 description: Mr Milú's official shared package for Flutter projects
-version: 0.1.1
+version: 0.2.0
 issue_tracker: https://github.com/mrmilu/flutter_mrmilu/issues
 repository: https://github.com/mrmilu/flutter_mrmilu
 
@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   intl: 0.17.0
+  meta: 1.7.0
 
 dev_dependencies:
   flutter_test:
