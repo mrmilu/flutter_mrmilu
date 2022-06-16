@@ -67,7 +67,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":rocket: **Deploy update** :rocket:\nApp/Package: mrmilu_flutter\nVersion: *<https://github.com/mrmilu/front_web_mrmilu/blob/master/CHANGELOG.md|${{ env.LAST_TAG }}>*"
+                  "text": ":rocket: **Deploy update** :rocket:\nApp/Package: mrmilu_flutter\nVersion: *<https://github.com/mrmilu/flutter_mrmilu/blob/master/CHANGELOG.md|${{ env.LAST_TAG }}>*"
                 }
               }
             ]
