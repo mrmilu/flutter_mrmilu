@@ -6,7 +6,7 @@ on:
 jobs: 
   build:
     name: Build and test
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - name: Configure enviroment
@@ -22,6 +22,12 @@ jobs:
       run: flutter analyze
     - name: Run tests
       run: flutter test
+    - name: Build Example
+      run: |
+        pushd example
+        flutter build appbundle --no-pub --debug
+        flutter build ios --no-pub --debug --no-codesign
+        flutter build web --no-pub --debug
   deployment:
     if: ${{ github.ref_type == 'tag' }}
     needs: build
