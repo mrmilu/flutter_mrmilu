@@ -12,6 +12,7 @@
 .github/
 package-lock.json
 package.json
+tools/
 
 *.iml
 *.ipr
