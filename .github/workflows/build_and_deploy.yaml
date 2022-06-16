@@ -27,7 +27,7 @@ jobs:
         pushd example
         flutter build appbundle --no-pub --debug
         flutter build ios --no-pub --debug --no-codesign
-        flutter build web --no-pub --debug
+        flutter build web --no-pub
   deployment:
     if: ${{ github.ref_type == 'tag' }}
     needs: build
