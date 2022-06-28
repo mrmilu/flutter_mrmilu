@@ -1,0 +1,78 @@
+name: Build and deployment
+
+on:
+  push:     
+
+jobs: 
+  build:
+    name: Build and test
+    runs-on: macos-latest
+
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - name: Download flutter
+      uses: subosito/flutter-action@v2.4.0
+      with:
+        flutter-version: '2.10.5'
+        cache: true
+    - name: Install dependencies
+      run: flutter pub get
+    - name: Analyze code
+      run: flutter analyze
+    - name: Run tests
+      run: flutter test
+    - name: Build Example
+      run: |
+        pushd example
+        flutter build appbundle --no-pub --debug
+        flutter build ios --no-pub --debug --no-codesign
+        flutter build web --no-pub
+    # Comment until has a way to ignore warnings
+    # - name: Check publish warnings
+    #   run: dart pub publish --dry-run
+
+  deployment:
+    if: ${{ github.ref_type == 'tag' }}
+    needs: build
+    name: Deploy package
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v3
+    - name: Download flutter
+      uses: subosito/flutter-action@v2.4.0
+      with:
+        flutter-version: '2.10.5'
+        cache: true
+    - name: Setup pub credentials
+      shell: bash
+      env:
+        PUB_DEV_PUBLISH_ACCESS_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_ACCESS_TOKEN }}
+        PUB_DEV_PUBLISH_REFRESH_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_REFRESH_TOKEN }}
+      run: |
+        sh ./tool/pub_login.sh
+    - name: Publish package
+      run: pub publish -f
+    - name: Set env for last tag release
+      run: echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+    - name: Post to a Slack channel
+      id: slack
+      uses: slackapi/slack-github-action@v1.19.0
+      with:
+        channel-id: "C0BHTP53P"
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":rocket: **Deploy update** :rocket:\nApp/Package: mrmilu_flutter\nVersion: *<https://github.com/mrmilu/flutter_mrmilu/blob/master/CHANGELOG.md|${{ env.LAST_TAG }}>*"
+                }
+              }
+            ]
+          }
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

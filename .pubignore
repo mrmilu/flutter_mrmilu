@@ -9,9 +9,9 @@
 .svn/
 /node_modules
 .fvm/
-.github/
 package-lock.json
 package.json
+tool/
 
 *.iml
 *.ipr

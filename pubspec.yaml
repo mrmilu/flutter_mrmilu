@@ -1,6 +1,6 @@
 name: flutter_mrmilu
 description: Mr Milú's official shared package for Flutter projects
-version: 0.2.0
+version: 0.2.1
 issue_tracker: https://github.com/mrmilu/flutter_mrmilu/issues
 repository: https://github.com/mrmilu/flutter_mrmilu
 
@@ -9,7 +9,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  dio: 4.0.6
+  dio: 4.0.4
   flutter:
     sdk: flutter
   intl: 0.17.0
