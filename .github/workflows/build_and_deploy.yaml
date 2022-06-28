@@ -28,6 +28,9 @@ jobs:
         flutter build appbundle --no-pub --debug
         flutter build ios --no-pub --debug --no-codesign
         flutter build web --no-pub
+    - name: Check publish warnings
+      run: dart pub publish --dry-run
+
   deployment:
     if: ${{ github.ref_type == 'tag' }}
     needs: build
@@ -49,8 +52,6 @@ jobs:
         PUB_DEV_PUBLISH_REFRESH_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_REFRESH_TOKEN }}
       run: |
         sh ./tools/pub_login.sh
-    - name: Check publish warnings
-      run: pub publish --dry-run
     - name: Publish package
       run: pub publish -f
     - name: Set env for last tag release
