@@ -28,8 +28,9 @@ jobs:
         flutter build appbundle --no-pub --debug
         flutter build ios --no-pub --debug --no-codesign
         flutter build web --no-pub
-    - name: Check publish warnings
-      run: dart pub publish --dry-run
+    # Comment until has a way to ignore warnings
+    # - name: Check publish warnings
+    #   run: dart pub publish --dry-run
 
   deployment:
     if: ${{ github.ref_type == 'tag' }}
