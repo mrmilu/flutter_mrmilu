@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.2.2](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.1...0.2.2) (2022-07-04)
+
+
+### Features
+
+* Allow generic type to delete method ([e295114](https://github.com/mrmilu/flutter_mrmilu/commit/e2951147ca1e13bf59521bc067c08a99e4efea5e))
+
 ### [0.2.1](https://github.com/mrmilu/flutter_mrmilu/compare/0.1.1...0.2.1) (2022-06-28)
 
 
