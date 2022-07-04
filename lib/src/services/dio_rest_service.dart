@@ -102,19 +102,19 @@ class DioRestService {
     );
   }
 
-  Future<Map<String, dynamic>?> delete(
+  Future<T?> delete<T>(
     String endpointPath, {
     Map<String, dynamic>? data,
     Map<String, dynamic>? queryParam,
   }) async {
-    return _tryCatch<Map<String, dynamic>>(
+    return _tryCatch<T>(
       () async {
-        final response = await dio.delete<Map<String, dynamic>?>(
+        final response = await dio.delete<T>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
         );
-        return response.data ?? {};
+        return response.data;
       },
     );
   }
