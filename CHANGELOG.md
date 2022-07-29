@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.2.3](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.2...0.2.3) (2022-07-29)
+
 ### [0.2.2](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.1...0.2.2) (2022-07-04)
 
 
