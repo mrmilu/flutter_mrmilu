@@ -85,7 +85,7 @@ class DioRestService {
 
   Future<Map<String, dynamic>?> post(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<Map<String, dynamic>>(
@@ -104,7 +104,7 @@ class DioRestService {
 
   Future<T?> delete<T>(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<T>(
@@ -121,7 +121,7 @@ class DioRestService {
 
   Future<Map<String, dynamic>?> patch(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<Map<String, dynamic>>(
