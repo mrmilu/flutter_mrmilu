@@ -102,6 +102,25 @@ class DioRestService {
     );
   }
 
+  Future<Map<String, dynamic>?> put(
+    String endpointPath, {
+    dynamic data,
+    Map<String, dynamic>? queryParam,
+  }) async {
+    return _tryCatch<Map<String, dynamic>>(
+      () async {
+        final response = await dio.put<dynamic>(
+          endpointPath,
+          data: data,
+          queryParameters: queryParam,
+        );
+        return response.data != null && response.data is Map
+            ? response.data
+            : {};
+      },
+    );
+  }
+
   Future<T?> delete<T>(
     String endpointPath, {
     dynamic data,
