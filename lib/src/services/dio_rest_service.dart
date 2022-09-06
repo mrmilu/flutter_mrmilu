@@ -85,7 +85,7 @@ class DioRestService {
 
   Future<Map<String, dynamic>?> post(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<Map<String, dynamic>>(
@@ -102,9 +102,28 @@ class DioRestService {
     );
   }
 
+  Future<Map<String, dynamic>?> put(
+    String endpointPath, {
+    dynamic data,
+    Map<String, dynamic>? queryParam,
+  }) async {
+    return _tryCatch<Map<String, dynamic>>(
+      () async {
+        final response = await dio.put<dynamic>(
+          endpointPath,
+          data: data,
+          queryParameters: queryParam,
+        );
+        return response.data != null && response.data is Map
+            ? response.data
+            : {};
+      },
+    );
+  }
+
   Future<T?> delete<T>(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
     return _tryCatch<T>(
@@ -119,19 +138,19 @@ class DioRestService {
     );
   }
 
-  Future<Map<String, dynamic>?> patch(
+  Future<T?> patch<T>(
     String endpointPath, {
-    Map<String, dynamic>? data,
+    dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
-    return _tryCatch<Map<String, dynamic>>(
+    return _tryCatch<T>(
       () async {
-        final response = await dio.patch<Map<String, dynamic>?>(
+        final response = await dio.patch<T>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
         );
-        return response.data ?? {};
+        return response.data;
       },
     );
   }
