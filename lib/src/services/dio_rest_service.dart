@@ -138,19 +138,19 @@ class DioRestService {
     );
   }
 
-  Future<Map<String, dynamic>?> patch(
+  Future<T?> patch<T>(
     String endpointPath, {
     dynamic data,
     Map<String, dynamic>? queryParam,
   }) async {
-    return _tryCatch<Map<String, dynamic>>(
+    return _tryCatch<T>(
       () async {
-        final response = await dio.patch<Map<String, dynamic>?>(
+        final response = await dio.patch<T>(
           endpointPath,
           data: data,
           queryParameters: queryParam,
         );
-        return response.data ?? {};
+        return response.data;
       },
     );
   }
