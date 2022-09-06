@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.3.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.4...0.3.0) (2022-09-06)
+
+
+### Features
+
+* Add asset utils ([d71ce8d](https://github.com/mrmilu/flutter_mrmilu/commit/d71ce8d5819d8fa94c242d9b030bec6019c6822c))
+* Add link utils ([8219ef1](https://github.com/mrmilu/flutter_mrmilu/commit/8219ef12417dc6427028b2fa964ff33087237b35))
+* Improve patch method on dio service ([945244c](https://github.com/mrmilu/flutter_mrmilu/commit/945244c98f6f2155e55dbbffa9ca58fbd3d39773))
+
 ### [0.2.4](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.3...0.2.4) (2022-08-04)
 
 ### [0.2.3](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.2...0.2.3) (2022-07-29)
