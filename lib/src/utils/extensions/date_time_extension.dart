@@ -49,4 +49,9 @@ extension DateTimeExtension on DateTime {
   String toyMMMM() {
     return DateFormat.yMMMM().format(this);
   }
+
+  bool equalMonthAndYear([DateTime? secondDate]) {
+    secondDate ??= DateTime.now();
+    return month == secondDate.month && year == secondDate.year;
+  }
 }
