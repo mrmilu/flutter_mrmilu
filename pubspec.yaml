@@ -36,3 +36,5 @@ index_generator:
     - path: lib
       name: flutter_mrmilu
       library: flutter_mrmilu
+      docs: |
+        Mr Milú Flutter library
