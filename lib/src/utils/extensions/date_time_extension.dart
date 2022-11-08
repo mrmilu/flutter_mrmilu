@@ -1,57 +1,48 @@
-import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
 
 extension DateTimeExtension on DateTime {
   /// Checks if two DateTime objects are the same day.
-  /// Returns `false` if [dateTime] is null.
-  bool isSameDay(DateTime? dateTime) {
-    if (dateTime == null) {
-      return false;
-    }
-    return dateTime.year == year &&
-        dateTime.month == month &&
-        dateTime.day == day;
+  ///
+  /// If don't pass dateTime, will be now by default
+  bool isSameDay([DateTime? dateTime]) {
+    dateTime ??= DateTime.now();
+    return DateUtils.isSameDay(this, dateTime);
   }
 
-  /// Checks if date is after or equal to [dateTime] (date >= dateTime).
-  /// Returns `false` if [dateTime] is null.
-  bool isAfterOrEqualTo(DateTime? dateTime) {
-    if (dateTime == null) {
-      return false;
-    }
+  /// Checks if date is after or equal to [dateTime] (`date >= dateTime`).
+  ///
+  /// If don't pass dateTime, will be now by default
+  bool isAfterOrEqualTo([DateTime? dateTime]) {
+    dateTime ??= DateTime.now();
     final isAtSameMomentAs = dateTime.isAtSameMomentAs(this);
-    return isAtSameMomentAs | isAfter(dateTime);
+    return isAtSameMomentAs || isAfter(dateTime);
   }
 
-  /// Checks if date is before or equal to [dateTime] (date <= dateTime).
-  /// Returns `false` if [dateTime] is null.
-  bool isBeforeOrEqualTo(DateTime? dateTime) {
-    if (dateTime == null) {
-      return false;
-    }
+  /// Checks if date is before or equal to [dateTime] (`date <= dateTime`).
+  ///
+  /// If don't pass dateTime, will be now by default
+  bool isBeforeOrEqualTo([DateTime? dateTime]) {
+    dateTime ??= DateTime.now();
     final isAtSameMomentAs = dateTime.isAtSameMomentAs(this);
-    return isAtSameMomentAs | isBefore(dateTime);
+    return isAtSameMomentAs || isBefore(dateTime);
   }
 
-  /// Checks if date is between [fromDateTime] and [toDateTime] (fromDateTime >= date >= toDateTime).
-  /// Returns `false` if [fromDateTime] or [toDateTime] is null.
+  /// Checks if date is between [fromDateTime] and [toDateTime]
+  /// (`fromDateTime >= date >= toDateTime`).
   bool isBetween(
-    DateTime? fromDateTime,
-    DateTime? toDateTime,
+    DateTime fromDateTime,
+    DateTime toDateTime,
   ) {
-    if (fromDateTime == null || toDateTime == null) {
-      return false;
-    }
     final isAfter = isAfterOrEqualTo(fromDateTime);
     final isBefore = isBeforeOrEqualTo(toDateTime);
     return isAfter && isBefore;
   }
 
-  String toyMMMM() {
-    return DateFormat.yMMMM().format(this);
-  }
-
-  bool equalMonthAndYear([DateTime? secondDate]) {
+  /// Checks if two DateTime objects are the month and year.
+  ///
+  /// If don't pass dateTime, will be now by default
+  bool isSameMonth([DateTime? secondDate]) {
     secondDate ??= DateTime.now();
-    return month == secondDate.month && year == secondDate.year;
+    return DateUtils.isSameMonth(this, secondDate);
   }
 }

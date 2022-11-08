@@ -40,7 +40,7 @@ class DocumentValidators {
   ///
   /// References: https://www.mapa.gob.es/app/materialvegetal/docs/CIF.pdf
   bool cif(String value) {
-    const String _cifControl = 'JABCDEFGHI';
+    const String cifControl = 'JABCDEFGHI';
     const String cifRegex = '^([ABCDEFGHJKLMNPQRSUVW])(\\d{7})([0-9A-J])\$';
     final cif = value.toUpperCase();
 
@@ -52,7 +52,7 @@ class DocumentValidators {
     final String control = value.substring(8);
 
     final controlDigit = _getDigitCif(number);
-    final controlLetter = _cifControl.substring(controlDigit, controlDigit + 1);
+    final controlLetter = cifControl.substring(controlDigit, controlDigit + 1);
 
     if (RegExp('^[ABEH]').hasMatch(letter)) {
       return control == controlDigit.toString();

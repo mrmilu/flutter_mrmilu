@@ -12,9 +12,9 @@ jobs:
     - name: Configure enviroment
       uses: actions/checkout@v3
     - name: Download flutter
-      uses: subosito/flutter-action@v2.4.0
+      uses: subosito/flutter-action@v2
       with:
-        flutter-version: '2.10.5'
+        flutter-version: '3.3.7'
         cache: true
     - name: Install dependencies
       run: flutter pub get
@@ -42,9 +42,9 @@ jobs:
     - name: Configure enviroment
       uses: actions/checkout@v3
     - name: Download flutter
-      uses: subosito/flutter-action@v2.4.0
+      uses: subosito/flutter-action@v2
       with:
-        flutter-version: '2.10.5'
+        flutter-version: '3.3.7'
         cache: true
     - name: Setup pub credentials
       shell: bash

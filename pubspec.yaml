@@ -1,6 +1,6 @@
 name: flutter_mrmilu
 description: Mr Milú's official shared package for Flutter projects
-version: 0.3.0
+version: 0.4.0
 issue_tracker: https://github.com/mrmilu/flutter_mrmilu/issues
 repository: https://github.com/mrmilu/flutter_mrmilu
 
@@ -13,16 +13,16 @@ dependencies:
   flutter:
     sdk: flutter
   intl: 0.17.0
-  meta: 1.7.0
-  url_launcher: 6.1.5
+  meta: 1.8.0
+  url_launcher: 6.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: 1.0.4
-  index_generator: 3.0.0
-  faker_dart: 0.1.4
-  http_mock_adapter: ^0.3.3
+  flutter_lints: 2.0.1
+  index_generator: 3.3.3
+  faker_dart: 0.1.11
+  http_mock_adapter: 0.3.3
 
 flutter:
 
@@ -36,3 +36,5 @@ index_generator:
     - path: lib
       name: flutter_mrmilu
       library: flutter_mrmilu
+      docs: |
+        Mr Milú Flutter library

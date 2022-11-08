@@ -1,6 +1,10 @@
 import 'extensions/date_time_extension.dart';
 
 class DateTimeUtils {
+  /// Generate a list of DateTime between [startDate] and [endDate],
+  /// ignoring time.
+  ///
+  /// If don't pass endDate, will be now by default
   static List<DateTime> generateDates(
     DateTime startDate, {
     DateTime? endDate,
@@ -9,7 +13,7 @@ class DateTimeUtils {
     final List<DateTime> dateTimes = [
       DateTime(startDate.year, startDate.month, startDate.day)
     ];
-    if (startDate.equalMonthAndYear(endDate)) {
+    if (startDate.isSameMonth(endDate)) {
       return dateTimes;
     }
     final monthsDifference =
