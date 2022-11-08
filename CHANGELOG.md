@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.4.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.3.0...0.4.0) (2022-11-08)
+
+
+### Features
+
+* Add date time utils ([b296007](https://github.com/mrmilu/flutter_mrmilu/commit/b2960073b136c3b3557808f4ced57eff75207169))
+* Add date times utils ([0d69a1b](https://github.com/mrmilu/flutter_mrmilu/commit/0d69a1bc07d0162fd5479b7db9117124003c3455))
+* Generate export file ([27bf59d](https://github.com/mrmilu/flutter_mrmilu/commit/27bf59d7ee3057df7fb43cc0870d6bb91cb37b80))
+
 ### [0.3.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.2.4...0.3.0) (2022-09-06)
 
 
