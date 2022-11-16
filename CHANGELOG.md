@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.5.1](https://github.com/mrmilu/flutter_mrmilu/compare/0.5.0...0.5.1) (2022-11-16)
+
+
+### Features
+
+* Generate index ([ba7a0cf](https://github.com/mrmilu/flutter_mrmilu/commit/ba7a0cf0696da0ebd0b2b5fe648d2bde2391963b))
+
 ## [0.5.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.4.0...0.5.0) (2022-11-16)
 
 
