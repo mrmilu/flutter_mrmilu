@@ -45,4 +45,12 @@ extension DateTimeExtension on DateTime {
     secondDate ??= DateTime.now();
     return DateUtils.isSameMonth(this, secondDate);
   }
+
+  /// Get difference in year between `DateTime.now()` and [this] date
+  ///
+  /// Warning: This calculation don't consider years with 366 days
+  // TODO: Improve with this implementation: https://github.com/JErazo7/age_calculator
+  int yearsFromNow() {
+    return (DateTime.now().difference(this).inDays / 365).round();
+  }
 }
