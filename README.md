@@ -42,6 +42,7 @@ To modify this package, you can open a new [issue](https://github.com/mrmilu/flu
 - Start release `git flow release start X.X.X`
 - Update version in pubspec.yaml
 - Generate changelog with `npm install` and `npm run release`
+  - Use `npm run release -- -r minor` or `npm run release -- -r major` to generate minor or major version changes
 - Commit changes `chore(release): X.X.X`
 - Create a pull request from release/X.X.X to master
 - Merge pull request when approved
