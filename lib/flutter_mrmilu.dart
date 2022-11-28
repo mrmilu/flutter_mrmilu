@@ -10,6 +10,7 @@ export 'src/utils/asset_utils.dart';
 export 'src/utils/date_time_utils.dart';
 export 'src/utils/extensions/date_time_extension.dart';
 export 'src/utils/extensions/double_extension.dart';
+export 'src/utils/extensions/faker_extension.dart';
 export 'src/utils/extensions/int_extension.dart';
 export 'src/utils/extensions/string_extension.dart';
 export 'src/utils/http_overrides_utils.dart';
