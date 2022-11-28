@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.5.1...0.6.0) (2022-11-28)
+
+
+### Features
+
+* add faker extension ([be819f4](https://github.com/mrmilu/flutter_mrmilu/commit/be819f4c0d6a07b4b128397847a7e759745b8616))
+
 ### [0.5.1](https://github.com/mrmilu/flutter_mrmilu/compare/0.5.0...0.5.1) (2022-11-16)
 
 
