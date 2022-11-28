@@ -54,7 +54,7 @@ jobs:
       run: |
         sh ./tool/pub_login.sh
     - name: Publish package
-      run: pub publish -f
+      run: flutter pub publish -f
     - name: Set env for last tag release
       run: echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
     - name: Post to a Slack channel
