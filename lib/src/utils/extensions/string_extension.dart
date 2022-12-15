@@ -50,6 +50,14 @@ extension StringExtension on String {
     return replaceAllMapped(exp, (Match m) => ('_${m.group(0)}')).toLowerCase();
   }
 
+  /// Convert string to CamelCase
+  String toCamelCase({String separator = '_'}) {
+    final words =
+        split(separator).map((string) => string.toFirstLetterCase()).toList();
+    words[0] = words[0].toLowerCase();
+    return words.join();
+  }
+
   String removeDiacritics() {
     final diacriticsMap = {};
 

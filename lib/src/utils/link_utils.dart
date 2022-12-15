@@ -6,9 +6,19 @@ import 'package:url_launcher/url_launcher.dart';
 /// https://pub.dev/packages/url_launcher#configuration
 class LinkUtils {
   /// Open link with external browser
-  static Future<void> openLink(Uri url) async {
+  static Future<void> openLink(
+    Uri url, {
+    LaunchMode mode = LaunchMode.platformDefault,
+    WebViewConfiguration webViewConfiguration = const WebViewConfiguration(),
+    String? webOnlyWindowName,
+  }) async {
     if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+      await launchUrl(
+        url,
+        mode: mode,
+        webViewConfiguration: webViewConfiguration,
+        webOnlyWindowName: webOnlyWindowName,
+      );
       return;
     }
     throw 'Could not launch $url';

@@ -14,7 +14,7 @@ jobs:
     - name: Download flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.3.7'
+        flutter-version: '3.3.9'
         cache: true
     - name: Install dependencies
       run: flutter pub get
@@ -44,7 +44,7 @@ jobs:
     - name: Download flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.3.7'
+        flutter-version: '3.3.9'
         cache: true
     - name: Setup pub credentials
       shell: bash
@@ -59,7 +59,7 @@ jobs:
       run: echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
     - name: Post to a Slack channel
       id: slack
-      uses: slackapi/slack-github-action@v1.19.0
+      uses: slackapi/slack-github-action@v1
       with:
         channel-id: "C0BHTP53P"
         payload: |

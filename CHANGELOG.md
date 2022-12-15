@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.6.0...0.7.0) (2022-12-15)
+
+### Features
+
+* add camel case converter ([f9237c5](https://github.com/mrmilu/flutter_mrmilu/commit/f9237c545112cb3378c30a651d7cd3f67a8ae733))
+* Add headers property to dio service ([40754f3](https://github.com/mrmilu/flutter_mrmilu/commit/40754f30912aa291d08fe2e07cf3c009d3c75554))
+* add more properties to openLink ([c77f1d7](https://github.com/mrmilu/flutter_mrmilu/commit/c77f1d795d2dbbd7dacd2de1410410c1e60e923f))
+
 ## [0.6.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.5.1...0.6.0) (2022-11-28)
 
 

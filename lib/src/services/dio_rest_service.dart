@@ -36,6 +36,13 @@ class DioRestService {
   /// By default `[200]`
   final List<int> validCodes;
 
+  /// Http request headers. The keys of initial headers will be converted to lowercase,
+  /// for example 'Content-Type' will be converted to 'content-type'.
+
+  /// The key of Header Map is case-insensitive,
+  /// eg: content-type and Content-Type are regard as the same key.
+  final Map<String, dynamic>? headers;
+
   @internal
   late Dio dio;
 
@@ -47,6 +54,7 @@ class DioRestService {
     this.connectTimeout = 15000,
     this.sendTimeout = 15000,
     this.validCodes = const [200],
+    this.headers,
   }) {
     _initClient();
   }
@@ -58,6 +66,7 @@ class DioRestService {
         receiveTimeout: receiveTimeout,
         connectTimeout: connectTimeout,
         sendTimeout: sendTimeout,
+        headers: headers,
         validateStatus: (int? code) => validCodes.contains(code),
       ),
     );
