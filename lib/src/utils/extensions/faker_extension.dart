@@ -10,4 +10,8 @@ extension FakerExtension on Faker {
       '${name.firstName()}.${name.lastName()}@${internet.domainName()}.${internet.domainSuffix()}',
     );
   }
+
+  T singleListOption<T>(List<T> list) {
+    return list[datatype.number(max: list.length)];
+  }
 }
