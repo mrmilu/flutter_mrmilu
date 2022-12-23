@@ -30,7 +30,7 @@ class LinkUtils {
   }
 
   /// Open mail client to send email
-  Future<void> openMail(String email) async {
+  static Future<void> openMail(String email) async {
     await openLink(Uri.parse('mailto:$email'));
   }
 
