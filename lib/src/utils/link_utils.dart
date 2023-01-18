@@ -30,7 +30,7 @@ class LinkUtils {
   }
 
   /// Open mail client to send email
-  Future<void> openMail(String email) async {
+  static Future<void> openMail(String email) async {
     await openLink(Uri.parse('mailto:$email'));
   }
 
@@ -39,7 +39,7 @@ class LinkUtils {
   /// Number required a country code
   /// Example [+34123456789]
   static Future<void> openWhatsapp(String number) async {
-    await openLink(Uri.parse('https://api.whatsapp.com/send?phone=$number'));
+    await openLink(Uri.parse('https://wa.me/$number'));
   }
 
   /// Use google maps api to open app
