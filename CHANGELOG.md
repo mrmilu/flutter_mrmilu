@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.7.0...0.8.0) (2023-01-18)
+
+
+### Features
+
+* add random item list on faker ([9bc0ecb](https://github.com/mrmilu/flutter_mrmilu/commit/9bc0ecbb8b51df4af7a4ae6fdcede50e3e469e86))
+
+
+### Bug Fixes
+
+* convert to static openMail method ([8ecf129](https://github.com/mrmilu/flutter_mrmilu/commit/8ecf1294a7728ff9ff4b4cde1bcd6327b2584ca5))
+
 ## [0.7.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.6.0...0.7.0) (2022-12-15)
 
 ### Features
