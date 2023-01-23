@@ -2,8 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [0.8.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.7.0...0.8.0) (2023-01-18)
+## [0.9.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.8.0...0.9.0) (2023-01-23)
 
+### Features
+
+* add double extensions ([3923e5b](https://github.com/mrmilu/flutter_mrmilu/commit/3923e5bfdd30a4967ad4aeb58262f6e783215830))
+* improve datetime extension ([7a2a79f](https://github.com/mrmilu/flutter_mrmilu/commit/7a2a79f70e1e3c0a20db446fa882b7872edea93d))
+
+### Bug Fixes
+
+* improve dio with generic types ([2f118c1](https://github.com/mrmilu/flutter_mrmilu/commit/2f118c16b1836a473e256d1d6f77523770a1e294))
+
+## [0.8.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.7.0...0.8.0) (2023-01-18)
 
 ### Features
 
