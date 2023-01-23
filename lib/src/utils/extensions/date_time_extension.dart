@@ -29,13 +29,21 @@ extension DateTimeExtension on DateTime {
 
   /// Checks if date is between [fromDateTime] and [toDateTime]
   /// (`fromDateTime >= date >= toDateTime`).
+  ///
+  /// Use includeStartDate and includeEndDate to include or exclude
+  /// the start and end time when compare dates
   bool isBetween(
     DateTime fromDateTime,
-    DateTime toDateTime,
-  ) {
-    final isAfter = isAfterOrEqualTo(fromDateTime);
-    final isBefore = isBeforeOrEqualTo(toDateTime);
-    return isAfter && isBefore;
+    DateTime toDateTime, {
+    bool includeStartDate = true,
+    bool includeEndDate = true,
+  }) {
+    final after = includeStartDate
+        ? isAfterOrEqualTo(fromDateTime)
+        : isAfter(fromDateTime);
+    final before =
+        includeEndDate ? isBeforeOrEqualTo(toDateTime) : isBefore(toDateTime);
+    return after && before;
   }
 
   /// Checks if two DateTime objects are the month and year.
