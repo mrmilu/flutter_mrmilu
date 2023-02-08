@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.9.0...0.10.0) (2023-02-08)
+
+
+### Features
+
+* updated flutter and some deps ([6c54877](https://github.com/mrmilu/flutter_mrmilu/commit/6c54877988d391a37024b6796c690ec5f679b0fd))
+
+
+### Bug Fixes
+
+* fixed custom versioner ([2f14dea](https://github.com/mrmilu/flutter_mrmilu/commit/2f14deaeefdc3c9dfd34c4ac1081ff45d2b1b576))
+
 ## [0.9.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.8.0...0.9.0) (2023-01-23)
 
 ### Features
