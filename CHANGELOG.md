@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.9.0...1.0.0) (2023-02-08)
+
+
+### Features
+
+* added asset picker, image compress and social auth service ([cceb458](https://github.com/mrmilu/flutter_mrmilu/commit/cceb4581568d61a053e7a837eefe49c40e25db46))
+* added notifications service ([5afbba9](https://github.com/mrmilu/flutter_mrmilu/commit/5afbba932b9621e3bc0c5d32acbb5c8119ba0def))
+
 ## [0.9.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.8.0...0.9.0) (2023-01-23)
 
 ### Features

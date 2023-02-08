@@ -45,10 +45,9 @@ To modify this package, you can open a new [issue](https://github.com/mrmilu/flu
   - Use `npm run release -- -r minor` or `npm run release -- -r major` to generate minor or major version changes
 - Commit changes `chore(release): X.X.X`
 - Create a pull request from release/X.X.X to master
-- Merge pull request when approved
+- Create a pull request from release/X.X.X to develop
+- Merge pull requests when approved
 - Push tag X.X.X to master
-- Pull request from master to develop
-- Merge pull request when approved
 
 ### Index
 
