@@ -5,10 +5,16 @@ library flutter_mrmilu;
 
 export 'src/formatters/date_time_formatter.dart';
 export 'src/helpers/helpers.dart';
+export 'src/interfaces/asset_picker_service.dart';
+export 'src/interfaces/image_compress_service.dart';
 export 'src/interfaces/notifications_service.dart';
+export 'src/interfaces/social_auth_service.dart';
 export 'src/models/notifications_service.dart';
+export 'src/services/asset_picker_service.dart';
 export 'src/services/dio_rest_service.dart';
+export 'src/services/image_compress_service.dart';
 export 'src/services/notifications_service.dart';
+export 'src/services/social_auth_service.dart';
 export 'src/utils/asset_utils.dart';
 export 'src/utils/date_time_utils.dart';
 export 'src/utils/extensions/date_time_extension.dart';
