@@ -41,7 +41,7 @@ extension StringExtension on String {
     if (texts.isEmpty || !texts.any((text) => text.isNotEmpty)) {
       return this;
     }
-    return '${this}$separator${texts.join(separator)}';
+    return '$this$separator${texts.join(separator)}';
   }
 
   /// Convert string to snake_case
