@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "release": "commit-and-tag-version --tag-prefix \"\""
+    "release": "npx commit-and-tag-version --tag-prefix \"\""
   },
   "commit-and-tag-version": {
     "skip": {
