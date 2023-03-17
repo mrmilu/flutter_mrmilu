@@ -8,6 +8,8 @@ export 'src/helpers/helpers.dart';
 export 'src/services/dio_rest_service.dart';
 export 'src/utils/asset_utils.dart';
 export 'src/utils/date_time_utils.dart';
+export 'src/utils/platform_utils.dart';
+export 'src/utils/extensions/color.dart';
 export 'src/utils/extensions/date_time_extension.dart';
 export 'src/utils/extensions/double_extension.dart';
 export 'src/utils/extensions/faker_extension.dart';
