@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://github.com/mrmilu/flutter_mrmilu/compare/1.0.0...1.1.0) (2023-03-21)
+
+
+### Features
+
+* add utils ([9a4b5c4](https://github.com/mrmilu/flutter_mrmilu/commit/9a4b5c4c1a6892940827dd8d6938aad25a9219e2))
+
 ## [1.0.0](https://github.com/mrmilu/flutter_mrmilu/compare/0.9.0...1.0.0) (2023-02-08)
 
 

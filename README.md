@@ -15,7 +15,9 @@ This package collects a handful amount of methods, classes, interfaces and more 
     - Int
     - DateTime
   - Http overrides (mobile only)
+  - Platfrom
   - Link utils ([url_launcher](https://pub.dev/packages/url_launcher))
+  - Color
 - Services abstractions
   - [Dio](https://pub.dev/packages/dio) (Api REST)
 - Helpers
