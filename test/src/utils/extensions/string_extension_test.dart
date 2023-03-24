@@ -49,6 +49,10 @@ void main() {
     });
   });
   group('toSentenceCase -', () {
+    test('return empty if string is empty', () {
+      const text = '';
+      expect(text.toSentenceCase(), '');
+    });
     test('convert a single word', () {
       final lowercaseText = faker.lorem.word();
       final text = 't$lowercaseText';
@@ -162,6 +166,92 @@ void main() {
           'T$sentenceText Z$sentenceText A$sentenceText',
         );
       });
+    });
+  });
+
+  group('toFirstLetterCase', () {
+    test('return empty if string is empty', () {
+      const text = '';
+      expect(text.toSentenceCase(), '');
+    });
+  });
+
+  group('toSnakeCase', () {
+    test('should return empty if string is empty', () {
+      const text = '';
+      expect(text.toSnakeCase(), '');
+    });
+    test('should return snake case formatted string when get camel case', () {
+      final word1 = faker.lorem.word();
+      final word2 = faker.lorem.word();
+      final text = '$word1 $word2 $word1 $word2'.toCamelCase(separator: ' ');
+      final textSnakeCase = '${word1}_${word2}_${word1}_$word2';
+
+      expect(text.toSnakeCase(), textSnakeCase);
+    });
+    test(
+        'should return screaming snake case formatted string when get camel case',
+        () {
+      final word1 = faker.lorem.word();
+      final word2 = faker.lorem.word();
+      final text = '$word1 $word2 $word1 $word2'.toCamelCase(separator: ' ');
+      final textSnakeCase = '${word1}_${word2}_${word1}_$word2'.toUpperCase();
+
+      expect(text.toSnakeCase(screaming: true), textSnakeCase);
+    });
+    test('should return snake case formatted string when string', () {
+      final word1 = faker.lorem.word();
+      final word2 = faker.lorem.word();
+      final text = '$word1 $word2 $word1 $word2';
+      final textSnakeCase = '${word1}_${word2}_${word1}_$word2';
+
+      expect(text.toSnakeCase(fromCamelCase: false), textSnakeCase);
+    });
+    test('should return screaming snake case formatted string when string', () {
+      final word1 = faker.lorem.word();
+      final word2 = faker.lorem.word();
+      final text = '$word1 $word2 $word1 $word2';
+      final textSnakeCase = '${word1}_${word2}_${word1}_$word2'.toUpperCase();
+
+      expect(
+        text.toSnakeCase(fromCamelCase: false, screaming: true),
+        textSnakeCase,
+      );
+    });
+  });
+  group('toCamelCase', () {
+    test('should return empty if string is empty', () {
+      const text = '';
+      expect(text.toCamelCase(), '');
+    });
+
+    test('should return camel case formatted string when get snake case', () {
+      final wordInitial = faker.lorem.word();
+      final word1 = faker.lorem.word().toFirstLetterCase();
+      final word2 = faker.lorem.word().toFirstLetterCase();
+      final text =
+          '${wordInitial.toFirstLetterCase()}_${word2.toUpperCase()}_${word1.toLowerCase()}_$word2';
+      final textCamelCase = '$wordInitial$word2$word1$word2';
+
+      expect(text.toCamelCase(), textCamelCase);
+    });
+
+    test(
+        'should return camel case formatted string when get string with different separators',
+        () {
+      final wordInitial = faker.lorem.word();
+      final word1 = faker.lorem.word().toFirstLetterCase();
+      final word2 = faker.lorem.word().toFirstLetterCase();
+      const separator1 = ' ';
+      const separator2 = '-';
+      final text =
+          '${wordInitial.toFirstLetterCase()}$separator1${word2.toUpperCase()}$separator1${word1.toLowerCase()}$separator1$word2';
+      final text2 =
+          '${wordInitial.toFirstLetterCase()}$separator2${word2.toUpperCase()}$separator2${word1.toLowerCase()}$separator2$word2';
+      final textCamelCase = '$wordInitial$word2$word1$word2';
+
+      expect(text.toCamelCase(separator: separator1), textCamelCase);
+      expect(text2.toCamelCase(separator: separator2), textCamelCase);
     });
   });
 }
