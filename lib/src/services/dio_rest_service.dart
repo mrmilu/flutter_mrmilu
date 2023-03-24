@@ -63,9 +63,9 @@ class DioRestService {
     final Dio initDio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
-        receiveTimeout: receiveTimeout,
-        connectTimeout: connectTimeout,
-        sendTimeout: sendTimeout,
+        receiveTimeout: Duration(milliseconds: receiveTimeout),
+        connectTimeout: Duration(milliseconds: connectTimeout),
+        sendTimeout: Duration(milliseconds: sendTimeout),
         headers: headers,
         validateStatus: (int? code) => validCodes.contains(code),
       ),
