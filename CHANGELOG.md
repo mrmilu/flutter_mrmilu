@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://github.com/mrmilu/flutter_mrmilu/compare/1.1.0...1.2.0) (2023-03-24)
+
+
+### Features
+
+* improve documentation ([43bb057](https://github.com/mrmilu/flutter_mrmilu/commit/43bb05705bbce9e6dd44122f9b00631446b35fa5))
+* improve snake case implementation ([9677222](https://github.com/mrmilu/flutter_mrmilu/commit/9677222125078a93972c07208ba6fb85f7204ce4))
+* update dio version ([a04b1d9](https://github.com/mrmilu/flutter_mrmilu/commit/a04b1d9b8fe5136fcd5b19a5f83133a0ced78308))
+
 ## [1.1.0](https://github.com/mrmilu/flutter_mrmilu/compare/1.0.0...1.1.0) (2023-03-21)
 
 
