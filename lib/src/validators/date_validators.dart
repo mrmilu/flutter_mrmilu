@@ -14,7 +14,7 @@ class DateValidators {
     return compareDate.isBeforeOrEqualTo(DateTime.now());
   }
 
-  /// Checks if [date] is after now (DateTime.now())
+  /// Checks if [date] is after now (`DateTime.now()`)
   static bool isFuture(DateTime date) {
     return date.isAfter(DateTime.now());
   }
