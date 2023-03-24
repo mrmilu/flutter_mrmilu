@@ -31,6 +31,15 @@ test:
     genhtml coverage/lcov.info -o coverage/html
     open coverage/html/index.html
 
+# Generate release with number
+release number:
+    git flow release start {{number}}
+    fvm flutter pub run index_generator
+    npm run release
+    just install-deps
+    git add .
+    git commit -m "chore(release): {{number}}"
+
 # Initial project setup
 setup:
     fvm flutter precache --ios
