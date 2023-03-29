@@ -7,9 +7,8 @@ extension StringExtension on String {
   ///
   /// Output: `This is a text. are you sure? yes`
   String toSentenceCase() {
-    if (isEmpty) {
-      return this;
-    }
+    if (isEmpty) return this;
+
     const regExp =
         r'[a-zA-Z\d][^.!¡?¿]*|[^a-zA-Z\d]*[.!¡?¿][^a-zA-Z\d]*|[^a-zA-Z\d]+';
 
@@ -24,8 +23,10 @@ extension StringExtension on String {
   ///
   /// Input: `this is a text. are you sure? yes`
   ///
-  /// Output: `This is a text. Are you sure? Yes`
+  /// Output: `This Is A Text. Are You Sure? Yes`
   String toFirstLetterCase() {
+    if (isEmpty) return this;
+
     final lowerCaseText = toLowerCase();
     return contains('¿') || contains('¡')
         ? lowerCaseText[0] +
@@ -45,13 +46,40 @@ extension StringExtension on String {
   }
 
   /// Convert string to snake_case
-  String toSnakeCase() {
-    RegExp exp = RegExp(r'(?<=[a-z])[A-Z]');
-    return replaceAllMapped(exp, (Match m) => ('_${m.group(0)}')).toLowerCase();
+  ///
+  /// Convert from `camelCase` by default
+  ///
+  /// If need convert sentences, set [fromCamelCase] to `false`
+  /// and choose separator (by default ` ` a space)
+  ///
+  /// Set [screaming] `true` when want convert to SCREAMING_SNAKE_CASE
+  String toSnakeCase({
+    bool fromCamelCase = true,
+    String separator = ' ',
+    bool screaming = false,
+  }) {
+    if (isEmpty) return this;
+
+    if (fromCamelCase) {
+      RegExp exp = RegExp(r'(?<=[a-z])[A-Z]');
+      final replaced = replaceAllMapped(exp, (Match m) => ('_${m.group(0)}'));
+
+      return screaming ? replaced.toUpperCase() : replaced.toLowerCase();
+    }
+    final words = split(separator)
+        .map(
+            (string) => screaming ? string.toUpperCase() : string.toLowerCase())
+        .toList();
+    return words.join('_');
   }
 
-  /// Convert string to CamelCase
+  /// Convert sentence or string to CamelCase
+  ///
+  /// By default, [separator] is `_`.
+  /// Example: Can be ` ` (space) to convert sentences
   String toCamelCase({String separator = '_'}) {
+    if (isEmpty) return this;
+
     final words =
         split(separator).map((string) => string.toFirstLetterCase()).toList();
     words[0] = words[0].toLowerCase();
@@ -71,9 +99,8 @@ extension StringExtension on String {
         }
       }
     }
-    return replaceAllMapped(diacriticsRegExp, (a) {
-      return diacriticsMap[a.group(0)] ?? a.group(0);
-    });
+    return replaceAllMapped(
+        diacriticsRegExp, (a) => diacriticsMap[a.group(0)] ?? a.group(0));
   }
 }
 

@@ -40,4 +40,27 @@ void main() {
       expect(result, false);
     });
   });
+
+  group('isFuture - ', () {
+    test('should be true when date is future', () {
+      final future = faker.date.future(DateTime.now());
+
+      expect(future.isAfter(DateTime.now()), isTrue);
+
+      final fakerDateTime = faker.datatype.dateTime();
+      final future2 = faker.date.future(fakerDateTime);
+
+      expect(future2.isAfter(fakerDateTime), isTrue);
+    });
+    test('should be false when date is not future', () {
+      final future = faker.date.past(DateTime.now());
+
+      expect(future.isAfter(DateTime.now()), isFalse);
+
+      final fakerDateTime = faker.datatype.dateTime();
+      final future2 = faker.date.past(fakerDateTime);
+
+      expect(future2.isAfter(fakerDateTime), isFalse);
+    });
+  });
 }
