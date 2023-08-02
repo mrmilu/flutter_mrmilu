@@ -154,10 +154,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -196,10 +196,10 @@ packages:
     dependency: "direct dev"
     description:
       name: index_generator
-      sha256: a28507de9c730c77a40658396e0e1476f5e210be73b32d7afa26ae3f7b6f8f09
+      sha256: e9447b449c06a5e4770b3f782da20f66cfcf8d28e4a2a7bb597076746e3eb0c7
       url: "https://pub.dev"
     source: hosted
-    version: "3.4.0"
+    version: "3.4.1"
   intl:
     dependency: "direct main"
     description:

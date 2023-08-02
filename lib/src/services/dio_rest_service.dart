@@ -11,21 +11,21 @@ class DioRestService {
   /// Use optional [interceptors] to configure a interceptors list
   final List<Interceptor> interceptors;
 
-  /// Optional [catchErrors] to get DioError. This is usuful when need
+  /// Optional [catchErrors] to get DioError. This is useful when need
   /// transform a DioError to custom error.
   final void Function(DioError)? catchErrors;
 
-  /// Receive timeout in miliseconds
+  /// Receive timeout in milliseconds
   ///
   /// By default `15` seconds
   final int receiveTimeout;
 
-  /// Connect timeout in miliseconds
+  /// Connect timeout in milliseconds
   ///
   /// By default `15` seconds
   final int connectTimeout;
 
-  /// Send timeout in miliseconds
+  /// Send timeout in milliseconds
   ///
   /// By default `15` seconds
   final int sendTimeout;
